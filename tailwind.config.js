@@ -1,21 +1,52 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./index.html"],
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
   theme: {
-    container: {
-      center: true,
-      padding: "16px",
-    },
     extend: {
       colors: {
-        primary: "#14b8a6",
-        secondary: "#475569",
-        dark: "#0f172a",
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)'
+        },
+        popover: {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)'
+        },
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)'
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)'
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)'
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)'
+        },
+        border: 'var(--border)',
+        ring: 'var(--ring)'
       },
-      screens: {
-        "2xl": "1400px",
+      fontFamily: {
+        sans: ['Inter', 'Outfit', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
       },
+      boxShadow: {
+        'glow-sm': '0 0 15px -3px rgba(34, 197, 94, 0.15)',
+        'glow-md': '0 0 25px -5px rgba(34, 197, 94, 0.25)',
+        'glow-lg': '0 0 35px -5px rgba(34, 197, 94, 0.35)',
+      }
     },
   },
   plugins: [],
-};
+}

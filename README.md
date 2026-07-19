@@ -1,3 +1,6 @@
 # rmindra.github.io
-Not Finished Portfolio using Bootstrap<br>
+
+Portfolio Website of Me rmindra
+Helped by antigravity.
+<br>
 Live Page : https://rmindra.github.io/
