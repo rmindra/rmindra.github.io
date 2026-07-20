@@ -472,32 +472,6 @@ export const projects = [
 		],
 	},
 	{
-		id: 5,
-		title: "Personal Landing Page Bootstrap",
-		category: "Frontend",
-		short: "Classic, professional personal portfolio and landing page crafted with Bootstrap 5 and custom CSS.",
-		description:
-			"A structured personal portfolio web application utilizing Bootstrap 5 grid layout system, custom CSS styling, and responsive navigation controls. Demonstrated solid mastery of frontend grid mechanics, semantic HTML structure, and cross-browser visual consistency.",
-		technologies: [
-			"Bootstrap 5",
-			"HTML5",
-			"CSS3",
-			"JavaScript",
-			"Responsive Grid",
-		],
-		challenges: [
-			"Customizing Bootstrap default variables and components to achieve a unique personal design language",
-			"Implementing smooth scroll behaviors and mobile hamburger navigation transitions",
-			"Maintaining cross-browser compatibility across legacy and modern web rendering engines",
-		],
-		architecture:
-			"Semantic HTML5 DOM  →  Bootstrap 5 Grid System  →  Custom CSS Override Layer",
-		github: "https://github.com/rmindra/bootstrap-portfolio",
-		demo: "https://rmindra.github.io/bootstrap-portfolio/",
-		docs: "https://github.com/rmindra/bootstrap-portfolio#readme",
-		images: ["/projects/bootstrap-1.svg", "/projects/bootstrap-2.svg"],
-	},
-	{
 		id: 6,
 		title: "MyBookList & LocalStorage Auth Apps",
 		category: "Frontend",
