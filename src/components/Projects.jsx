@@ -116,8 +116,7 @@ export function Projects({ onSelectProject }) {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.5 }}
-						className="max-w-2xl"
+						className="w-full"
 					>
 						<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-xs font-mono text-muted-foreground mb-4">
 							<Terminal className="w-3.5 h-3.5 text-primary" />
