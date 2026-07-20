@@ -22,7 +22,7 @@ export const projects = [
 		github: null,
 		demo: "https://play.google.com/store/apps/details?id=com.invento.invento_mobile_app",
 		docs: null,
-		images: ["/projects/invento-1.svg", "/projects/invento-2.svg"],
+		images: ["/projects/invento/invento.webp", "/projects/invento/invento2.png"],
 		pblSummary: {
 			role: "Product Owner (PO) & Core Engineer (Mobile & Backend Deployment)",
 			team: [
@@ -548,7 +548,7 @@ export const projects = [
 		github: null,
 		demo: "https://play.google.com/store/apps/details?id=com.invento.invento_mobile_app",
 		docs: null,
-		images: ["/projects/invento-2.svg", "/projects/nexus-2.svg"],
+		images: ["/projects/invento/invento.webp", "/projects/invento/invento2.png"],
 		pblSummary: {
 			role: "Product Owner (PO) & Backend Server Deployment Lead",
 			team: [
