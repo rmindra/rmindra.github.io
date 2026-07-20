@@ -473,10 +473,7 @@ export const projects = [
 		github: "https://github.com/rmindra/data-finance-react-tailwind",
 		demo: "https://rmindra.github.io/data-finance-react-tailwind/",
 		docs: "https://github.com/rmindra/data-finance-react-tailwind#readme",
-		images: [
-			"/projects/data-finance-1.svg",
-			"/projects/data-finance-2.svg",
-		],
+		images: ["/projects/business-landing-page.png"],
 	},
 	{
 		id: 6,
