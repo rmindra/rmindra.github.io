@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E11" />
+      <stop offset="100%" stop-color="#18181D" />
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#131317" />
+      <stop offset="100%" stop-color="#1A1A20" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg)" rx="12" />
+  
+  <rect x="0" y="0" width="800" height="48" fill="#131317" rx="12" />
+  <rect x="0" y="36" width="800" height="12" fill="#131317" />
+  <circle cx="28" cy="24" r="6" fill="#EF4444" opacity="0.8" />
+  <circle cx="48" cy="24" r="6" fill="#EAB308" opacity="0.8" />
+  <circle cx="68" cy="24" r="6" fill="#22C55E" opacity="0.8" />
+  <text x="400" y="28" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">bookshelf-api-crud // Node.js Express RESTful JSON Storage API</text>
+
+  <rect x="50" y="75" width="700" height="340" rx="10" fill="url(#card)" stroke="#27272A" stroke-width="1.5" />
+  
+  <text x="80" y="115" fill="#FAFAFA" font-family="'Outfit', sans-serif" font-weight="700" font-size="20">Bookshelf REST API Architecture</text>
+  <text x="80" y="137" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="13">Clean Express.js Router • Hapi/Joi Validation • JSON Storage Engine</text>
+
+  <!-- Endpoint 1: POST /books -->
+  <rect x="80" y="160" width="640" height="48" rx="8" fill="#18181D" stroke="#22C55E" stroke-width="1.2" />
+  <rect x="92" y="170" width="64" height="28" rx="6" fill="#22C55E" />
+  <text x="124" y="188" fill="#0E0E11" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="12" text-anchor="middle">POST</text>
+  <text x="175" y="189" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="14">/books</text>
+  <text x="310" y="188" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="13">Create book item (name, year, author, summary, publisher)</text>
+
+  <!-- Endpoint 2: GET /books -->
+  <rect x="80" y="220" width="640" height="48" rx="8" fill="#18181D" stroke="#3B82F6" stroke-width="1.2" />
+  <rect x="92" y="230" width="64" height="28" rx="6" fill="#3B82F6" />
+  <text x="124" y="248" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="12" text-anchor="middle">GET</text>
+  <text x="175" y="249" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="14">/books?name=...&amp;reading=1</text>
+  <text x="415" y="248" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="13">Filter books by query params</text>
+
+  <!-- Endpoint 3: PUT /books/{bookId} -->
+  <rect x="80" y="280" width="640" height="48" rx="8" fill="#18181D" stroke="#EAB308" stroke-width="1.2" />
+  <rect x="92" y="290" width="64" height="28" rx="6" fill="#EAB308" />
+  <text x="124" y="308" fill="#0E0E11" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="12" text-anchor="middle">PUT</text>
+  <text x="175" y="309" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="14">/books/{bookId}</text>
+  <text x="350" y="308" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="13">Update book details &amp; auto-calculate `finished` boolean</text>
+
+  <!-- Endpoint 4: DELETE /books/{bookId} -->
+  <rect x="80" y="340" width="640" height="48" rx="8" fill="#18181D" stroke="#EF4444" stroke-width="1.2" />
+  <rect x="92" y="350" width="64" height="28" rx="6" fill="#EF4444" />
+  <text x="124" y="368" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="12" text-anchor="middle">DELETE</text>
+  <text x="175" y="369" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="14">/books/{bookId}</text>
+  <text x="350" y="368" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="13">Remove book from persistence array with 404 guard</text>
+</svg>
