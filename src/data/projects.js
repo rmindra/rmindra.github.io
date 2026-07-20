@@ -22,7 +22,10 @@ export const projects = [
 		github: null,
 		demo: "https://play.google.com/store/apps/details?id=com.invento.invento_mobile_app",
 		docs: null,
-		images: ["/projects/invento/invento.webp", "/projects/invento/invento2.png"],
+		images: [
+			"/projects/invento/invento.webp",
+			"/projects/invento/invento2.png",
+		],
 		pblSummary: {
 			role: "Product Owner (PO) & Core Engineer (Mobile & Backend Deployment)",
 			team: [
@@ -202,11 +205,15 @@ export const projects = [
 			"/projects/sipeka/14.jpg",
 		],
 		pblSummary: {
-			headerTitle: "Workshop Mata Kuliah Mobile Development • Collaborative Team Summary",
+			headerTitle:
+				"Workshop Mata Kuliah Mobile Development • Collaborative Team Summary",
 			badge: "Single 5-Week Sprint Cycle",
-			deliverablesTitle: "Indra's Direct Technical & Mobile Logic Deliverables",
-			teamTitle: "Mobile Workshop Engineering Collaboration (Flutter, Gemini & Supabase)",
-			backlogTitle: "5-Week Workshop Task Breakdown (Single Sprint Cycle)",
+			deliverablesTitle:
+				"Indra's Direct Technical & Mobile Logic Deliverables",
+			teamTitle:
+				"Mobile Workshop Engineering Collaboration (Flutter, Gemini & Supabase)",
+			backlogTitle:
+				"5-Week Workshop Task Breakdown (Single Sprint Cycle)",
 			role: "Single 5-Week Sprint Cycle • Flutter, Supabase & Gemini AI Stack • Clean Architecture & Core Logic",
 			team: [
 				{
@@ -501,11 +508,11 @@ export const projects = [
 	// BACKEND
 	{
 		id: 7,
-		title: "InVento Backend Core API",
+		title: "Invento Backend Core API",
 		category: "Backend",
 		short: "High-performance .NET Core / C# Clean Architecture REST API powering enterprise inventory sync.",
 		description:
-			"InVento Backend (`pens-pbl/invento-backend`) is the central REST API engine powering multi-hub inventory operations. Built in C# .NET Core, it features structured repository patterns, PostgreSQL database querying with Entity Framework, SKU validation rules, and secure authentication middleware.",
+			"Invento Backend (`pens-pbl/invento-backend`) is the central REST API engine powering multi-hub inventory operations. Built in C# .NET Core, it features structured repository patterns, PostgreSQL database querying with Entity Framework, SKU validation rules, and secure authentication middleware.",
 		technologies: [
 			".NET Core C#",
 			"Entity Framework Core",
@@ -522,7 +529,10 @@ export const projects = [
 		github: null,
 		demo: "https://play.google.com/store/apps/details?id=com.invento.invento_mobile_app",
 		docs: null,
-		images: ["/projects/invento/invento.webp", "/projects/invento/invento2.png"],
+		images: [
+			"/projects/invento/invento.webp",
+			"/projects/invento/invento2.png",
+		],
 		pblSummary: {
 			role: "Product Owner (PO) & Backend Server Deployment Lead",
 			team: [

@@ -8,7 +8,7 @@ export function Skills() {
 			id="skills"
 			className="py-24 border-t border-border/60 relative bg-secondary/20"
 		>
-			<div className="max-w-6xl mx-auto px-6">
+			<div className="max-w-[1400px] mx-auto px-6">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}

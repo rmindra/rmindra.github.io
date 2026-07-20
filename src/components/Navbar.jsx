@@ -52,7 +52,7 @@ export function Navbar({ theme, toggleTheme }) {
 					: "bg-transparent py-5"
 			}`}
 		>
-			<div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+			<div className="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
 				<a
 					href="#"
 					className="flex items-center gap-2.5 font-mono font-semibold tracking-tight text-foreground hover:text-primary transition-colors group"

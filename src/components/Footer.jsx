@@ -14,12 +14,12 @@ export function Footer() {
 
 	return (
 		<footer className="py-16 border-t border-border/80 bg-card/40 relative">
-			<div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+			<div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
 				{/* Left Column: Exploring & Status */}
 				<div className="md:col-span-7 space-y-4">
 					<div className="flex items-center gap-2 font-mono font-bold text-foreground text-lg">
 						<Terminal className="w-5 h-5 text-primary" />
-						<span>rmindra.my.id</span>
+						<span>rmindra.github.io</span>
 					</div>
 
 					<div className="space-y-2 font-sans text-sm text-muted-foreground max-w-md">
@@ -128,10 +128,10 @@ export function Footer() {
 				</div>
 			</div>
 
-			<div className="max-w-6xl mx-auto px-6 mt-12 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted-foreground">
+			<div className="max-w-[1400px] mx-auto px-6 mt-12 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted-foreground">
 				<div>
 					&copy; {new Date().getFullYear()} Made With &#9825; Indra RM
-					(<strong className="text-foreground">rmindra.my.id</strong>)
+					(<strong className="text-foreground">rmindra.github.io</strong>)
 				</div>
 				<div className="flex items-center gap-2">
 					<span>

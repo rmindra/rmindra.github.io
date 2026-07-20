@@ -69,7 +69,7 @@ export function ProjectModal({ project, onClose }) {
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-4xl max-h-[90vh] bg-card border border-border rounded-2xl shadow-2xl overflow-y-auto flex flex-col z-10"
+          className="relative w-full max-w-5xl max-h-[90vh] bg-card border border-border rounded-2xl shadow-2xl overflow-y-auto flex flex-col z-10"
         >
           {/* Modal Header */}
           <div className="sticky top-0 z-20 bg-card/90 backdrop-blur-md px-6 py-4 border-b border-border flex items-center justify-between">
