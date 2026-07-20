@@ -428,19 +428,19 @@ export const projects = [
 		category: "Frontend",
 		short: "Modern TypeScript frontend for EEPIS/PENS campus room reservation and academic facility scheduling.",
 		description:
-			"2026-SPRK-frontend is a robust, type-safe web frontend engineered with TypeScript and React for managing room bookings across the Politeknik Elektronika Negeri Surabaya (PENS) campus. Features real-time availability grids, administrative approval queues, and interactive room layouts.",
+			"2026-SPRK-frontend is a robust, type-safe web frontend engineered with TypeScript and React for managing room bookings across the Politeknik Elektronika Negeri Surabaya (PENS) campus. Fully containerized within the unified Docker setup with automated dependency bootstrapping (`docker-entrypoint` scripts) and Vite development proxying (`/api/*` -> `sprk-backend`). Features real-time availability grids, administrative approval queues, and interactive room layouts.",
 		technologies: [
 			"TypeScript",
 			"React",
 			"Tailwind CSS",
-			"Vite",
+			"Vite Proxy Engine",
 			"Responsive UI",
 			"State Management",
 		],
 		challenges: [
 			"Structuring strict TypeScript interfaces for complex multi-slot room reservation schedules",
 			"Implementing real-time schedule conflict validation directly within the booking UI form",
-			"Building a responsive calendar grid that scales smoothly between desktop administrative views and student mobile screens",
+			"Configuring automated Docker container entrypoints (`npm install` checks) and Vite reverse proxy routing (`/api/*`) without manual host setup",
 		],
 		architecture:
 			"TypeScript React Client  →  API Client Layer  →  SPRK Backend Reservation Engine",
@@ -684,7 +684,7 @@ export const projects = [
 		category: "Backend",
 		short: "Enterprise-grade ASP.NET Core REST API & Entity Framework Core 10 reservation platform migrated to PostgreSQL.",
 		description:
-			"The core backend API engine for 2026-SPRK (Sistem Peminjaman Ruangan Kampus) at Politeknik Elektronika Negeri Surabaya (PENS). Migrated from SQL Server to PostgreSQL 16 for cloud-native Linux container compatibility. Features Entity Framework Core 10 automated database seeding (`EnsureCreated` / `InitialCreate`), global soft-delete query filtering (`!IsDeleted`), and OpenAPI (Swagger) documentation with custom string enum serialization.",
+			"The core backend API engine for 2026-SPRK (Sistem Peminjaman Ruangan Kampus) at Politeknik Elektronika Negeri Surabaya (PENS). Migrated from SQL Server to PostgreSQL 16 for cloud-native Linux container compatibility. Features unconditional EF Core 10 auto-migration on startup across all environments (`Database.Migrate()`) with resilient error-handling guards (`try-catch` catching PostgreSQL `42P04` database-already-exists exceptions during cold container starts), global soft-delete query filtering (`!IsDeleted`), and OpenAPI (Swagger) documentation.",
 		technologies: [
 			"ASP.NET Core 10",
 			"C# / .NET",
@@ -695,8 +695,8 @@ export const projects = [
 		],
 		challenges: [
 			"Migrating relational schema and EF Core migrations from Microsoft SQL Server (`UseSqlServer`) to PostgreSQL 16 (`UseNpgsql`) without breaking existing domain relationships",
-			"Implementing strict schedule overlap validation algorithms across multi-slot academic room reservations",
-			"Configuring automated database initialization and migration checks (`Database.Migrate()`) during Docker Compose startup sequence",
+			"Implementing resilient unconditional startup auto-migrations (`Database.Migrate()`) with `try-catch` guards against PostgreSQL `42P04` (`database already exists`) and `42P01` exceptions during cold container launches",
+			"Building strict schedule overlap validation algorithms across multi-slot academic room reservations",
 		],
 		architecture:
 			"REST Controller Layer  →  Service & Conflict Guard Layer  →  EF Core 10 ORM  →  PostgreSQL 16 Alpine",
@@ -713,7 +713,7 @@ export const projects = [
 		category: "Infra",
 		short: "Unified Docker Compose orchestration, Makefile automation, and containerized networking across three repository microservices.",
 		description:
-			"The infrastructure and unified container orchestration layer for the 2026-SPRK ecosystem (`2026-SPRK-frontend`, `2026-SPRK-backend`, and PostgreSQL 16 Alpine). Eliminates manual cross-repository setup by introducing a central `Makefile` with one-command launch capabilities (`make dev`, `make demo`, `make setup`). Manages cross-container bridge networks (`sprk-net`), persistent database volume storage (`sprk_db_data`), and strict health-check dependencies (`pg_isready`).",
+			"The infrastructure and unified container orchestration layer for the 2026-SPRK ecosystem (`2026-SPRK-frontend`, `2026-SPRK-backend`, and PostgreSQL 16 Alpine). Eliminates manual cross-repository troubleshooting by introducing a central `Makefile` with one-command orchestration workflows (`make setup`, `make dev`, `make reset`, `make demo`). Manages cross-container bridge networks (`sprk-net`), complete volume wipes and rebuilds (`make reset`), automated environment variable injections (`POSTGRES_PASSWORD`, `VITE_API_BASE_URL`), and strict health-check dependencies (`pg_isready -d SPRK`).",
 		technologies: [
 			"Docker Compose",
 			"Makefile Automation",
@@ -724,8 +724,8 @@ export const projects = [
 		],
 		challenges: [
 			"Designing clean cross-directory build contexts for three distinct Git repositories (`parent/2026-SPRK-*`) within a single unified Compose manifest",
-			"Orchestrating strict container startup ordering using `depends_on` conditions with active database `pg_isready` healthchecks",
-			"Structuring automated environment variable bootstrapping (`.env.compose.dev` and `.env.demo`) to seamlessly switch between local proxy development and pre-built registry images",
+			"Building a resilient one-command Makefile orchestration workflow (`make dev`, `make reset`) that automates volume wipeouts, container rebuilding, and healthcheck synchronization without manual intervention",
+			"Orchestrating strict container startup ordering (`depends_on: condition: service_healthy`) so backend auto-migrations wait for PostgreSQL `pg_isready` readiness",
 		],
 		architecture:
 			"Makefile CLI Target (`make dev`)  →  Docker Compose Engine  →  Isolated Bridge Network (`sprk-net`)  →  Frontend / Backend / PostgreSQL Containers",
