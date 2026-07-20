@@ -447,7 +447,7 @@ export const projects = [
 		github: "https://github.com/rmindra/2026-SPRK-frontend",
 		demo: "https://github.com/rmindra/2026-SPRK-frontend#readme",
 		docs: "https://github.com/rmindra/2026-SPRK-frontend",
-		images: ["/projects/sprk-1.svg", "/projects/sprk-2.svg"],
+		images: ["/projects/SPRK/rooms.png", "/projects/SPRK/bookings.png"],
 	},
 	{
 		id: 4,
@@ -703,7 +703,7 @@ export const projects = [
 		github: "https://github.com/rmindra/2026-SPRK-backend",
 		demo: "https://github.com/rmindra/2026-SPRK-backend#readme",
 		docs: "https://github.com/rmindra/2026-SPRK-backend",
-		images: ["/projects/sprk-backend-1.svg", "/projects/sprk-backend-2.svg"],
+		images: ["/projects/SPRK/backend.png", "/projects/SPRK/sprk-backend-2.svg"],
 	},
 
 	// INFRASTRUCTURE
@@ -732,7 +732,7 @@ export const projects = [
 		github: "https://github.com/rmindra/2026-SPRK-infrastructure",
 		demo: "https://github.com/rmindra/2026-SPRK-infrastructure#readme",
 		docs: "https://github.com/rmindra/2026-SPRK-infrastructure",
-		images: ["/projects/sprk-infra-1.svg", "/projects/sprk-infra-2.svg"],
+		images: ["/projects/SPRK/sprk-infra-1.svg", "/projects/SPRK/sprk-infra-2.svg"],
 	},
 ];
 
