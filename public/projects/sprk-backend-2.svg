@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E11" />
+      <stop offset="100%" stop-color="#18181D" />
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#131317" />
+      <stop offset="100%" stop-color="#1A1A20" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg)" rx="12" />
+  
+  <rect x="0" y="0" width="800" height="48" fill="#131317" rx="12" />
+  <rect x="0" y="36" width="800" height="12" fill="#131317" />
+  <circle cx="28" cy="24" r="6" fill="#EF4444" opacity="0.8" />
+  <circle cx="48" cy="24" r="6" fill="#EAB308" opacity="0.8" />
+  <circle cx="68" cy="24" r="6" fill="#22C55E" opacity="0.8" />
+  <text x="400" y="28" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">2026-SPRK-backend // PostgreSQL 16 EF Core Engine &amp; Soft-Delete Filters</text>
+
+  <!-- Left Box: Entity Framework Core 10 -->
+  <rect x="40" y="80" width="340" height="330" rx="10" fill="url(#card)" stroke="#27272A" stroke-width="1.5" />
+  <text x="70" y="120" fill="#A855F7" font-family="'Outfit', sans-serif" font-weight="700" font-size="18">Entity Framework Core 10</text>
+  <text x="70" y="142" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="13">Npgsql PostgreSQL Data Provider</text>
+  
+  <rect x="65" y="165" width="290" height="50" rx="8" fill="#18181D" stroke="#333338" />
+  <text x="80" y="188" fill="#3B82F6" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="13">UseNpgsql(ConnectionString)</text>
+  <text x="80" y="206" fill="#71717A" font-family="'Inter', sans-serif" font-size="11">Automated connection pooling &amp; SSL handling</text>
+
+  <rect x="65" y="228" width="290" height="50" rx="8" fill="#18181D" stroke="#333338" />
+  <text x="80" y="251" fill="#22C55E" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="13">Database.Migrate() Auto-Init</text>
+  <text x="80" y="269" fill="#71717A" font-family="'Inter', sans-serif" font-size="11">Applies InitialCreate schema on container startup</text>
+
+  <rect x="65" y="291" width="290" height="50" rx="8" fill="#18181D" stroke="#333338" />
+  <text x="80" y="314" fill="#EAB308" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="13">Global Soft-Delete QueryFilter</text>
+  <text x="80" y="332" fill="#71717A" font-family="'Inter', sans-serif" font-size="11">e.Where(b =&gt; !b.IsDeleted) applied globally</text>
+
+  <!-- Arrow -->
+  <path d="M 395 245 L 415 245" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Right Box: PostgreSQL 16 Alpine -->
+  <rect x="420" y="80" width="340" height="330" rx="10" fill="url(#card)" stroke="#27272A" stroke-width="1.5" />
+  <text x="450" y="120" fill="#3B82F6" font-family="'Outfit', sans-serif" font-weight="700" font-size="18">PostgreSQL 16 Alpine DB</text>
+  <text x="450" y="142" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="13">Persistent Volume: sprk_db_data</text>
+
+  <!-- Table 1: Rooms -->
+  <rect x="445" y="165" width="290" height="100" rx="8" fill="#18181D" stroke="#3B82F6" stroke-width="1.2" />
+  <text x="460" y="190" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="13">📋 Table: Rooms</text>
+  <text x="460" y="215" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="11">Id (PK) | Name | Capacity | Location</text>
+  <text x="460" y="235" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="11">IsAvailable (bool) | IsDeleted (bool)</text>
+  <text x="460" y="255" fill="#22C55E" font-family="'JetBrains Mono', monospace" font-size="11">Seeded with 3 campus labs/auditoriums</text>
+
+  <!-- Table 2: Bookings -->
+  <rect x="445" y="280" width="290" height="110" rx="8" fill="#18181D" stroke="#A855F7" stroke-width="1.2" />
+  <text x="460" y="305" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="13">📅 Table: Bookings</text>
+  <text x="460" y="330" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="11">Id (PK) | RoomId (FK) | BorrowerName</text>
+  <text x="460" y="350" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="11">StartTime | EndTime | Purpose</text>
+  <text x="460" y="372" fill="#EAB308" font-family="'JetBrains Mono', monospace" font-size="11">Status (Enum: Pending/Approved/Rejected)</text>
+</svg>

@@ -655,6 +655,62 @@ export const projects = [
 		docs: "https://github.com/rmindra/ticketing-in#readme",
 		images: ["/projects/ticketing-1.svg", "/projects/bookshelf-1.svg"],
 	},
+	{
+		id: 9,
+		title: "SPRK Backend (.NET 10 & PostgreSQL Reservation Engine)",
+		category: "Backend",
+		short: "Enterprise-grade ASP.NET Core REST API & Entity Framework Core 10 reservation platform migrated to PostgreSQL.",
+		description:
+			"The core backend API engine for 2026-SPRK (Sistem Peminjaman Ruangan Kampus) at Politeknik Elektronika Negeri Surabaya (PENS). Migrated from SQL Server to PostgreSQL 16 for cloud-native Linux container compatibility. Features Entity Framework Core 10 automated database seeding (`EnsureCreated` / `InitialCreate`), global soft-delete query filtering (`!IsDeleted`), and OpenAPI (Swagger) documentation with custom string enum serialization.",
+		technologies: [
+			"ASP.NET Core 10",
+			"C# / .NET",
+			"PostgreSQL 16",
+			"Entity Framework Core 10",
+			"Swagger / OpenAPI",
+			"Docker Containerization",
+		],
+		challenges: [
+			"Migrating relational schema and EF Core migrations from Microsoft SQL Server (`UseSqlServer`) to PostgreSQL 16 (`UseNpgsql`) without breaking existing domain relationships",
+			"Implementing strict schedule overlap validation algorithms across multi-slot academic room reservations",
+			"Configuring automated database initialization and migration checks (`Database.Migrate()`) during Docker Compose startup sequence",
+		],
+		architecture:
+			"REST Controller Layer  →  Service & Conflict Guard Layer  →  EF Core 10 ORM  →  PostgreSQL 16 Alpine",
+		github: "https://github.com/rmindra/2026-SPRK-backend",
+		demo: "https://github.com/rmindra/2026-SPRK-backend#readme",
+		docs: "https://github.com/rmindra/2026-SPRK-backend",
+		images: ["/projects/sprk-backend-1.svg", "/projects/sprk-backend-2.svg"],
+	},
+
+	// INFRASTRUCTURE
+	{
+		id: 10,
+		title: "SPRK Infrastructure (Microservices Orchestration & Docker Stack)",
+		category: "Infra",
+		short: "Unified Docker Compose orchestration, Makefile automation, and containerized networking across three repository microservices.",
+		description:
+			"The infrastructure and unified container orchestration layer for the 2026-SPRK ecosystem (`2026-SPRK-frontend`, `2026-SPRK-backend`, and PostgreSQL 16 Alpine). Eliminates manual cross-repository setup by introducing a central `Makefile` with one-command launch capabilities (`make dev`, `make demo`, `make setup`). Manages cross-container bridge networks (`sprk-net`), persistent database volume storage (`sprk_db_data`), and strict health-check dependencies (`pg_isready`).",
+		technologies: [
+			"Docker Compose",
+			"Makefile Automation",
+			"Linux Containerization",
+			"Bridge Networking",
+			"PostgreSQL Healthchecks",
+			"DevOps / Infrastructure",
+		],
+		challenges: [
+			"Designing clean cross-directory build contexts for three distinct Git repositories (`parent/2026-SPRK-*`) within a single unified Compose manifest",
+			"Orchestrating strict container startup ordering using `depends_on` conditions with active database `pg_isready` healthchecks",
+			"Structuring automated environment variable bootstrapping (`.env.compose.dev` and `.env.demo`) to seamlessly switch between local proxy development and pre-built registry images",
+		],
+		architecture:
+			"Makefile CLI Target (`make dev`)  →  Docker Compose Engine  →  Isolated Bridge Network (`sprk-net`)  →  Frontend / Backend / PostgreSQL Containers",
+		github: "https://github.com/rmindra/2026-SPRK-infrastructure",
+		demo: "https://github.com/rmindra/2026-SPRK-infrastructure#readme",
+		docs: "https://github.com/rmindra/2026-SPRK-infrastructure",
+		images: ["/projects/sprk-infra-1.svg", "/projects/sprk-infra-2.svg"],
+	},
 ];
 
-export const projectCategories = ["All", "Mobile", "Frontend", "Backend"];
+export const projectCategories = ["All", "Mobile", "Frontend", "Backend", "Infra"];

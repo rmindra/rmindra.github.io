@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E11" />
+      <stop offset="100%" stop-color="#18181D" />
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#131317" />
+      <stop offset="100%" stop-color="#1A1A20" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg)" rx="12" />
+  
+  <rect x="0" y="0" width="800" height="48" fill="#131317" rx="12" />
+  <rect x="0" y="36" width="800" height="12" fill="#131317" />
+  <circle cx="28" cy="24" r="6" fill="#EF4444" opacity="0.8" />
+  <circle cx="48" cy="24" r="6" fill="#EAB308" opacity="0.8" />
+  <circle cx="68" cy="24" r="6" fill="#22C55E" opacity="0.8" />
+  <text x="400" y="28" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">2026-SPRK-infrastructure // One-Command Makefile Automation &amp; Directory Tree</text>
+
+  <!-- Left Column: Directory Tree -->
+  <rect x="40" y="75" width="310" height="340" rx="10" fill="url(#card)" stroke="#27272A" stroke-width="1.5" />
+  <text x="65" y="115" fill="#EAB308" font-family="'Outfit', sans-serif" font-weight="700" font-size="17">📁 Cross-Repo Structure</text>
+  
+  <rect x="60" y="135" width="270" height="255" rx="8" fill="#18181D" stroke="#333338" />
+  <text x="75" y="165" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="13">parent/</text>
+  <text x="75" y="195" fill="#A855F7" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="13">├── 2026-SPRK-backend/</text>
+  <text x="95" y="215" fill="#71717A" font-family="'JetBrains Mono', monospace" font-size="11">│   └── Dockerfile &amp; .NET 10 API</text>
+  <text x="75" y="245" fill="#3B82F6" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="13">├── 2026-SPRK-frontend/</text>
+  <text x="95" y="265" fill="#71717A" font-family="'JetBrains Mono', monospace" font-size="11">│   └── Dockerfile &amp; React UI</text>
+  <text x="75" y="295" fill="#22C55E" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="13">└── 2026-SPRK-infrastructure/</text>
+  <text x="95" y="320" fill="#EAB308" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="12">    ├── Makefile ⚡</text>
+  <text x="95" y="342" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="12">    └── docker-compose.dev.yml</text>
+  <text x="95" y="364" fill="#A1A1AA" font-family="'JetBrains Mono', monospace" font-size="12">    └── env/.env.compose.dev</text>
+
+  <!-- Right Column: Makefile Commands -->
+  <rect x="375" y="75" width="385" height="340" rx="10" fill="url(#card)" stroke="#27272A" stroke-width="1.5" />
+  <text x="405" y="115" fill="#22C55E" font-family="'Outfit', sans-serif" font-weight="700" font-size="17">⚡ Makefile Automation Targets</text>
+
+  <!-- Command 1: make setup -->
+  <rect x="400" y="140" width="335" height="65" rx="8" fill="#18181D" stroke="#333338" />
+  <text x="420" y="165" fill="#22C55E" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="14">$ make setup</text>
+  <text x="420" y="188" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="12">Copies environment templates (`.env.compose.dev.example` → `.env`)</text>
+
+  <!-- Command 2: make dev -->
+  <rect x="400" y="220" width="335" height="85" rx="8" fill="#18181D" stroke="#3B82F6" stroke-width="1.5" />
+  <rect x="665" y="230" width="58" height="22" rx="4" fill="#3B82F6" />
+  <text x="694" y="245" fill="#FAFAFA" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="10" text-anchor="middle">PRIMARY</text>
+  <text x="420" y="245" fill="#3B82F6" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="15">$ make dev</text>
+  <text x="420" y="270" fill="#FAFAFA" font-family="'Inter', sans-serif" font-weight="500" font-size="13">One-instruction launch of all 3 microservices</text>
+  <text x="420" y="290" fill="#71717A" font-family="'JetBrains Mono', monospace" font-size="11">docker compose -f docker-compose.dev.yml up --build</text>
+
+  <!-- Command 3: make demo / make clean -->
+  <rect x="400" y="320" width="335" height="70" rx="8" fill="#18181D" stroke="#333338" />
+  <text x="420" y="345" fill="#A855F7" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="14">$ make demo  /  $ make clean</text>
+  <text x="420" y="368" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="12">Runs pre-built registry containers or wipes persistent data volumes</text>
+</svg>
