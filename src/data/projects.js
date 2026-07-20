@@ -645,68 +645,6 @@ export const projects = [
 		docs: "https://github.com/rmindra/ticketing-in#readme",
 		images: ["/projects/ticketing-1.svg", "/projects/bookshelf-1.svg"],
 	},
-	{
-		id: 9,
-		title: "NexusFlow API Gateway",
-		category: "Backend",
-		short: "Distributed rate-limiting API Gateway and microservice orchestration proxy written in C# .NET 8.",
-		description:
-			"NexusFlow is a high-throughput, cloud-native API Gateway proxy engineered in C# .NET 8. It provides dynamic request routing, distributed sliding-window rate limiting via Redis, open telemetry metrics, and automated health checks across downstream service clusters.",
-		technologies: [
-			"C# .NET 8",
-			"Redis Distributed Cache",
-			"Docker Compose",
-			"OpenTelemetry Tracing",
-			"Prometheus Metrics",
-		],
-		challenges: [
-			"Implementing sliding-window distributed rate limiting without introducing perceptible request latency",
-			"Dynamic hot-reloading of route configurations from database without restarting the gateway process",
-			"Zero-downtime health checking and automatic circuit breaking for degraded downstream services",
-		],
-		architecture:
-			"Client Request  →  NexusFlow Gateway (Rate Limiter / Cache)  →  Downstream Microservices  →  Redis & Postgres",
-		github: "https://github.com/rmindra/nexusflow",
-		demo: "https://github.com/rmindra/nexusflow#readme",
-		docs: "https://github.com/rmindra/nexusflow",
-		images: ["/projects/nexus-1.svg", "/projects/nexus-2.svg"],
-	},
-
-	// INFRA
-	{
-		id: 10,
-		title: "AWS Highly Available Web Architecture & Cloud Infra",
-		category: "Infra",
-		short: "AWS Cloud Foundations certified resilient architecture and automated Docker/Nginx deployment pipeline.",
-		description:
-			"Showcases cloud infrastructure engineering derived from the AWS Academy Cloud Foundations certification and AWS Training ('Building Highly Available Web Application'). Features multi-AZ EC2 deployment, IAM security hardening, Nginx reverse proxy load balancing, and containerized deployment for academic and SRE PENS environments.",
-		technologies: [
-			"Amazon Web Services (AWS)",
-			"EC2 & Multi-AZ High Availability",
-			"Docker Engine & Compose",
-			"Nginx Reverse Proxy",
-			"Linux Administration",
-			"AWS IAM & Security",
-		],
-		challenges: [
-			"Architecting failover-ready cloud topology across multiple Availability Zones to ensure zero downtime",
-			"Configuring Nginx reverse proxy rules and SSL termination for secure container routing",
-			"Applying strict Principle of Least Privilege (PoLP) across AWS IAM roles and security groups",
-		],
-		architecture:
-			"AWS Route 53 / ELB  →  Multi-AZ EC2 Instances (Nginx Proxy)  →  Docker Container Cluster",
-		github: "https://github.com/rmindra",
-		demo: "https://www.linkedin.com/in/rmindra/",
-		docs: "https://www.credly.com/badges/830014e8-7a9a-42c5-9d95-41c82be21669",
-		images: ["/projects/aws-1.svg", "/projects/aws-2.svg"],
-	},
 ];
 
-export const projectCategories = [
-	"All",
-	"Mobile",
-	"Frontend",
-	"Backend",
-	"Infra",
-	"Security",
-];
+export const projectCategories = ["All", "Mobile", "Frontend", "Backend"];
