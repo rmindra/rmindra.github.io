@@ -50,6 +50,14 @@ export function ProjectModal({ project, onClose }) {
   const images = project.images && project.images.length > 0 ? project.images : [];
   const architectureNodes = project.architecture ? project.architecture.split(/→|↓/g).map(s => s.trim()) : [];
 
+  const normalizeUrl = (url) => url ? url.replace(/#.*$/, '').replace(/\/$/, '') : null;
+  const githubUrl = normalizeUrl(project.github);
+  const demoUrl = normalizeUrl(project.demo);
+  const docsUrl = normalizeUrl(project.docs);
+
+  const showDemo = demoUrl && demoUrl !== githubUrl;
+  const showDocs = docsUrl && docsUrl !== githubUrl && docsUrl !== demoUrl;
+
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 overflow-y-auto">
@@ -209,7 +217,7 @@ export function ProjectModal({ project, onClose }) {
                         {node}
                       </div>
                       {i < architectureNodes.length - 1 && (
-                        <span className="text-primary font-bold text-base">↓</span>
+                        <span className="text-primary font-bold text-base">→</span>
                       )}
                     </div>
                   ))}
@@ -334,7 +342,7 @@ export function ProjectModal({ project, onClose }) {
                     🔒 Repository Private (@pens-pbl)
                   </span>
                 )}
-                {project.demo && (
+                {showDemo && (
                   <a
                     href={project.demo}
                     target="_blank"
@@ -345,7 +353,7 @@ export function ProjectModal({ project, onClose }) {
                     <span>{project.demo.includes('play.google.com') ? 'Google Play Store' : 'Live Demo'}</span>
                   </a>
                 )}
-                {project.docs && (
+                {showDocs && (
                   <a
                     href={project.docs}
                     target="_blank"
