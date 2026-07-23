@@ -713,7 +713,7 @@ export const projects = [
 		category: "Infra",
 		short: "Unified Docker Compose orchestration, Makefile automation, and containerized networking across three repository microservices.",
 		description:
-			"The infrastructure and unified container orchestration layer for the 2026-SPRK ecosystem (`2026-SPRK-frontend`, `2026-SPRK-backend`, and PostgreSQL 16 Alpine). Eliminates manual cross-repository troubleshooting by introducing a central `Makefile` with one-command orchestration workflows (`make setup`, `make dev`, `make reset`, `make demo`). Manages cross-container bridge networks (`sprk-net`), complete volume wipes and rebuilds (`make reset`), automated environment variable injections (`POSTGRES_PASSWORD`, `VITE_API_BASE_URL`), and strict health-check dependencies (`pg_isready -d SPRK`).",
+			"The infrastructure and unified container orchestration layer for the 2026-SPRK ecosystem (`2026-SPRK-frontend`, `2026-SPRK-backend`, and PostgreSQL 16 Alpine). Eliminates manual cross-repository troubleshooting by introducing a central `Makefile` with one-command orchestration workflows (`make dev`, `make reset`, `make down`, `make demo`). Manages cross-container bridge networks (`sprk-net`), complete volume wipes and rebuilds (`make reset`), automated environment variable injections (`POSTGRES_PASSWORD`, `VITE_API_BASE_URL`), and strict health-check dependencies (`pg_isready -d SPRK`).",
 		technologies: [
 			"Docker Compose",
 			"Makefile Automation",

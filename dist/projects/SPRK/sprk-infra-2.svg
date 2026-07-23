@@ -38,10 +38,10 @@
   <rect x="375" y="75" width="385" height="340" rx="10" fill="url(#card)" stroke="#27272A" stroke-width="1.5" />
   <text x="405" y="115" fill="#22C55E" font-family="'Outfit', sans-serif" font-weight="700" font-size="17">⚡ Makefile Automation Targets</text>
 
-  <!-- Command 1: make setup -->
+  <!-- Command 1: make down / make logs -->
   <rect x="400" y="140" width="335" height="65" rx="8" fill="#18181D" stroke="#333338" />
-  <text x="420" y="165" fill="#22C55E" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="14">$ make setup</text>
-  <text x="420" y="188" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="12">Copies environment templates (`.env.compose.dev.example` → `.env`)</text>
+  <text x="420" y="165" fill="#22C55E" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="14">$ make down / $ make logs</text>
+  <text x="420" y="188" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="12">Stops containers (preserves data) / Follows live output</text>
 
   <!-- Command 2: make dev -->
   <rect x="400" y="220" width="335" height="85" rx="8" fill="#18181D" stroke="#3B82F6" stroke-width="1.5" />
@@ -51,8 +51,8 @@
   <text x="420" y="270" fill="#FAFAFA" font-family="'Inter', sans-serif" font-weight="500" font-size="13">One-instruction launch of all 3 microservices</text>
   <text x="420" y="290" fill="#71717A" font-family="'JetBrains Mono', monospace" font-size="11">docker compose -f docker-compose.dev.yml up --build</text>
 
-  <!-- Command 3: make demo / make clean -->
+  <!-- Command 3: make reset / make demo -->
   <rect x="400" y="320" width="335" height="70" rx="8" fill="#18181D" stroke="#333338" />
-  <text x="420" y="345" fill="#A855F7" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="14">$ make demo  /  $ make clean</text>
-  <text x="420" y="368" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="12">Runs pre-built registry containers or wipes persistent data volumes</text>
+  <text x="420" y="345" fill="#A855F7" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="14">$ make reset / $ make demo</text>
+  <text x="420" y="368" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="12">Wipes volumes &amp; rebuilds / Runs registry containers</text>
 </svg>
