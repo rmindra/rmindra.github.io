@@ -658,29 +658,27 @@ export const projects = [
 	},
 	{
 		id: 11,
-		title: "Bookshelf RESTful CRUD API (Node.js)",
+		title: "My Fairyshelf",
 		category: "Backend",
-		short: "Clean Node.js & Express REST API for digital library tracking with strict request validation.",
+		short: "Playful personal library management system with book cataloging and borrowing tracking.",
 		description:
-			"A dedicated backend RESTful web service (`bookshelf-api-crud`) built with Node.js and Express for managing digital book collections. Implements full CRUD route handlers (`GET /books`, `POST /books`, `PUT /books/{bookId}`, `DELETE /books/{bookId}`), query parameter filtering (`?name=...&reading=1&finished=1`), and automated read-status computations.",
+			"A web-based personal library management system designed to help users catalog their physical book collections and track borrowed items. Built with a collaborative spirit and a playful, vibrant UI, the application features comprehensive Book Management CRUD, custom image handling for book covers, a 'dipinjam' (borrowed) status tracker, and real-time search functionality.",
 		technologies: [
-			"Node.js",
-			"Express.js / Hapi",
-			"REST API CRUD",
-			"JSON Persistence",
-			"Request Validation",
+			"PHP 8.x",
+			"MySQL (MariaDB)",
+			"Vanilla JavaScript",
+			"Bootstrap 5.3",
+			"Docker Compose"
 		],
 		challenges: [
-			"Handling strict request validation and HTTP status code compliance (e.g., 400 Bad Request on missing title, 404 on invalid book ID)",
-			"Filtering array collections dynamically using multiple optional query parameters without degrading response latency",
-			"Ensuring clean separation between route handlers and data persistence logic",
+			"Implementing a security-first approach by using Prepared Statements (PHP mysqli) to completely eliminate SQL Injection vulnerabilities",
+			"Addressing a PHP/MySQL DNS resolution bottleneck on Windows by explicitly routing through IPv4 (127.0.0.1) to eliminate a 1-second load delay",
+			"Engineering a flexible Docker setup with fallback environment variables to seamlessly transition between containerized and traditional local servers"
 		],
 		architecture:
-			"HTTP Client Request  →  REST Router & Validator Layer  →  JSON Storage Collection Engine",
-		github: "https://github.com/rmindra/bookshelf-api-crud",
-		demo: "https://github.com/rmindra/bookshelf-api-crud#readme",
-		docs: "https://github.com/rmindra/bookshelf-api-crud#readme",
-		images: ["/projects/bookshelf-1.svg"],
+			"Client UI Request  →  PHP Application Logic  →  MySQL Database",
+		github: "https://github.com/rmindra/myshelf",
+		images: ["/projects/myshelf.png"],
 	},
 	{
 		id: 9,
