@@ -628,29 +628,33 @@ export const projects = [
 	},
 	{
 		id: 8,
-		title: "IT Support Helpdesk & Ticketing System",
+		title: "Ticketing-In (IT Helpdesk & Support System)",
 		category: "Backend",
-		short: "Structured PHP ticketing and priority escalation portal for IT Operations staff support.",
+		short: "Robust IT Helpdesk & Support Ticketing System with role-based access control and real-time chat, built with Laravel 12.",
 		description:
-			"An enterprise staff helpdesk service (`ticketing-in`) built with PHP and relational database persistence. Enables internal employees to submit structured technical support tickets to IT Operations, assign priority levels (High/Medium/Low), track resolution workflows, and maintain secure session authentication against common web attack vectors.",
+			"A robust and visually polished IT Helpdesk & Support Ticketing System designed to streamline issue tracking from submission to resolution. Features distinct role-based access portals (Client/User and Administrator) built with AdminLTE v3. Enforces a strict Ticket Lifecycle Management with Two-Step Resolution. Includes a dynamic real-time 'Direct-Chat' interface for support discussions, smart timezone handling (UTC storage with JS local conversion), and advanced DataTables integration for priority-based sorting.",
 		technologies: [
-			"PHP Framework",
-			"MySQL Database",
-			"MVC Architecture",
-			"Session Management",
-			"Priority Escalation Matrix",
+			"Laravel 12 (PHP 8.2+)",
+			"MySQL 8.4",
+			"AdminLTE v3",
+			"Bootstrap 5",
+			"Docker & Supervisord",
 		],
 		challenges: [
-			"Designing normalized relational database schemas for ticket escalation tracking and status history",
-			"Securing staff authentication sessions against session hijacking and SQL injection vulnerabilities",
-			"Building clean dashboard statistics to monitor SLA resolution times across IT support tiers",
+			"Enforcing a strict state machine (`Open` → `In Progress` → `Resolved` → `Closed`) with a Two-Step Resolution protocol to prevent premature closures",
+			"Implementing smart timezone handling by storing absolute UTC time in the database and automatically parsing it to the user's local browser timezone",
+			"Engineering custom sorting algorithms in DataTables to sort priority columns logically by severity (`Urgent > High > Medium > Low`) rather than alphabetically",
+			"Containerizing the application with a multi-stage Docker build, configuring Nginx, PHP-FPM, and Laravel Queue Worker to run concurrently via Supervisord"
 		],
 		architecture:
-			"Client Request  →  PHP Router & Controller Handlers  →  MySQL Query Engine & Persistence",
+			"Nginx Reverse Proxy  →  PHP 8.2-FPM (Laravel 12)  →  MySQL 8.4 Database",
 		github: "https://github.com/rmindra/ticketing-in",
-		demo: "https://github.com/rmindra/ticketing-in#readme",
-		docs: "https://github.com/rmindra/ticketing-in#readme",
-		images: ["/projects/ticketing-1.svg"],
+		images: [
+			"/projects/ticketing-in/home-admin.png",
+			"/projects/ticketing-in/ticket.png",
+			"/projects/ticketing-in/detail-ticket.png",
+			"/projects/ticketing-in/user.png"
+		],
 	},
 	{
 		id: 11,
