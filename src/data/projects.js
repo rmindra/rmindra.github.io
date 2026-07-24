@@ -78,7 +78,7 @@ export const projects = [
 			"Client UI Request  →  PHP Application Logic  →  MySQL Database",
 		github: "https://github.com/rmindra/myshelf",
 		images: [
-			"/projects/myshelf.png"
+			"/projects/myshelf-v2.png"
 		],
 	},
 	{
