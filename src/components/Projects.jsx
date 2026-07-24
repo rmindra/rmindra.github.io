@@ -14,10 +14,12 @@ import {
 export function Projects({ onSelectProject }) {
 	const [activeCategory, setActiveCategory] = useState("All");
 
+	const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
+
 	const filteredProjects =
 		activeCategory === "All"
-			? projects
-			: projects.filter(
+			? sortedProjects
+			: sortedProjects.filter(
 					(p) =>
 						p.category === activeCategory ||
 						(activeCategory === "Security" &&

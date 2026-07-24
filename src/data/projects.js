@@ -657,30 +657,6 @@ export const projects = [
 		],
 	},
 	{
-		id: 11,
-		title: "My Fairyshelf",
-		category: "Backend",
-		short: "Playful personal library management system with book cataloging and borrowing tracking.",
-		description:
-			"A web-based personal library management system designed to help users catalog their physical book collections and track borrowed items. Built with a collaborative spirit and a playful, vibrant UI, the application features comprehensive Book Management CRUD, custom image handling for book covers, a 'dipinjam' (borrowed) status tracker, and real-time search functionality.",
-		technologies: [
-			"PHP 8.x",
-			"MySQL (MariaDB)",
-			"Vanilla JavaScript",
-			"Bootstrap 5.3",
-			"Docker Compose"
-		],
-		challenges: [
-			"Implementing a security-first approach by using Prepared Statements (PHP mysqli) to completely eliminate SQL Injection vulnerabilities",
-			"Addressing a PHP/MySQL DNS resolution bottleneck on Windows by explicitly routing through IPv4 (127.0.0.1) to eliminate a 1-second load delay",
-			"Engineering a flexible Docker setup with fallback environment variables to seamlessly transition between containerized and traditional local servers"
-		],
-		architecture:
-			"Client UI Request  →  PHP Application Logic  →  MySQL Database",
-		github: "https://github.com/rmindra/myshelf",
-		images: ["/projects/myshelf.png"],
-	},
-	{
 		id: 9,
 		title: "SPRK Backend (.NET 10 & PostgreSQL Reservation Engine)",
 		category: "Backend",
@@ -735,6 +711,30 @@ export const projects = [
 		demo: "https://github.com/rmindra/2026-SPRK-infrastructure#readme",
 		docs: "https://github.com/rmindra/2026-SPRK-infrastructure",
 		images: ["/projects/SPRK/sprk-infra-1.svg", "/projects/SPRK/sprk-infra-2.svg"],
+	},
+	{
+		id: 11,
+		title: "My Fairyshelf",
+		category: "Backend",
+		short: "Playful personal library management system with book cataloging and borrowing tracking.",
+		description:
+			"A web-based personal library management system designed to help users catalog their physical book collections and track borrowed items. Built with a collaborative spirit and a playful, vibrant UI, the application features comprehensive Book Management CRUD, custom image handling for book covers, a 'dipinjam' (borrowed) status tracker, and real-time search functionality.",
+		technologies: [
+			"PHP 8.x",
+			"MySQL (MariaDB)",
+			"Vanilla JavaScript",
+			"Bootstrap 5.3",
+			"Docker Compose"
+		],
+		challenges: [
+			"Implementing a security-first approach by using Prepared Statements (PHP mysqli) to completely eliminate SQL Injection vulnerabilities",
+			"Addressing a PHP/MySQL DNS resolution bottleneck on Windows by explicitly routing through IPv4 (127.0.0.1) to eliminate a 1-second load delay",
+			"Engineering a flexible Docker setup with fallback environment variables to seamlessly transition between containerized and traditional local servers"
+		],
+		architecture:
+			"Client UI Request  →  PHP Application Logic  →  MySQL Database",
+		github: "https://github.com/rmindra/myshelf",
+		images: ["/projects/myshelf.png"],
 	},
 ];
 
