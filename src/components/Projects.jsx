@@ -30,6 +30,14 @@ export function Projects({ onSelectProject }) {
 		setCurrentPage(1);
 	};
 
+	const handlePageChange = (newPage) => {
+		setCurrentPage(newPage);
+		const section = document.getElementById("projects");
+		if (section) {
+			section.scrollIntoView({ behavior: "smooth", block: "start" });
+		}
+	};
+
 	const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
 
 	const filteredProjects =
@@ -328,7 +336,7 @@ export function Projects({ onSelectProject }) {
 						className="flex items-center justify-center gap-2 mt-12"
 					>
 						<button
-							onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+							onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
 							disabled={currentPage === 1}
 							className="px-4 py-2 rounded-lg bg-secondary/80 border border-border/60 text-sm font-mono text-muted-foreground hover:text-foreground hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-all"
 						>
@@ -339,7 +347,7 @@ export function Projects({ onSelectProject }) {
 							{Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
 								<button
 									key={page}
-									onClick={() => setCurrentPage(page)}
+									onClick={() => handlePageChange(page)}
 									className={`w-9 h-9 rounded-lg flex items-center justify-center text-sm font-mono transition-all ${
 										currentPage === page
 											? "bg-primary text-primary-foreground font-bold shadow-md scale-105"
@@ -352,7 +360,7 @@ export function Projects({ onSelectProject }) {
 						</div>
 
 						<button
-							onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+							onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
 							disabled={currentPage === totalPages}
 							className="px-4 py-2 rounded-lg bg-secondary/80 border border-border/60 text-sm font-mono text-muted-foreground hover:text-foreground hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-all"
 						>
