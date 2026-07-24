@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects, projectCategories } from "../data/projects";
 import {
@@ -13,6 +13,22 @@ import {
 
 export function Projects({ onSelectProject }) {
 	const [activeCategory, setActiveCategory] = useState("All");
+	const [currentPage, setCurrentPage] = useState(1);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const checkIsMobile = () => {
+			setIsMobile(window.innerWidth < 768); // Tailwind 'md' breakpoint
+		};
+		checkIsMobile();
+		window.addEventListener('resize', checkIsMobile);
+		return () => window.removeEventListener('resize', checkIsMobile);
+	}, []);
+
+	const handleCategoryChange = (cat) => {
+		setActiveCategory(cat);
+		setCurrentPage(1);
+	};
 
 	const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
 
@@ -26,6 +42,11 @@ export function Projects({ onSelectProject }) {
 							(p.category === "Security" ||
 								p.category === "Security & Labs")),
 			  );
+
+	const itemsPerPage = isMobile ? 2 : 4;
+	const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+	const startIndex = (currentPage - 1) * itemsPerPage;
+	const paginatedProjects = filteredProjects.slice(startIndex, startIndex + itemsPerPage);
 
 	// Dynamic Template for Empty / Initializing Category Filter Tabs
 	const renderEmptyState = (category) => {
@@ -148,7 +169,7 @@ export function Projects({ onSelectProject }) {
 							return (
 								<button
 									key={cat}
-									onClick={() => setActiveCategory(cat)}
+									onClick={() => handleCategoryChange(cat)}
 									className={`relative px-4 py-2 rounded-lg font-mono text-xs sm:text-sm font-medium transition-all ${
 										isActive
 											? "text-foreground font-semibold shadow-sm"
@@ -176,7 +197,7 @@ export function Projects({ onSelectProject }) {
 				{/* Projects Cards Grid */}
 				<AnimatePresence mode="wait">
 					<motion.div
-						key={activeCategory}
+						key={`${activeCategory}-${currentPage}`}
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -20 }}
@@ -185,7 +206,7 @@ export function Projects({ onSelectProject }) {
 					>
 						{filteredProjects.length === 0
 							? renderEmptyState(activeCategory)
-							: filteredProjects.map((project, index) => (
+							: paginatedProjects.map((project, index) => (
 									<motion.div
 										key={project.id}
 										initial={{ opacity: 0, y: 30 }}
@@ -298,6 +319,47 @@ export function Projects({ onSelectProject }) {
 							  ))}
 					</motion.div>
 				</AnimatePresence>
+
+				{/* Pagination Controls */}
+				{totalPages > 1 && (
+					<motion.div 
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						className="flex items-center justify-center gap-2 mt-12"
+					>
+						<button
+							onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+							disabled={currentPage === 1}
+							className="px-4 py-2 rounded-lg bg-secondary/80 border border-border/60 text-sm font-mono text-muted-foreground hover:text-foreground hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+						>
+							&larr; Prev
+						</button>
+						
+						<div className="flex items-center gap-1">
+							{Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+								<button
+									key={page}
+									onClick={() => setCurrentPage(page)}
+									className={`w-9 h-9 rounded-lg flex items-center justify-center text-sm font-mono transition-all ${
+										currentPage === page
+											? "bg-primary text-primary-foreground font-bold shadow-md scale-105"
+											: "bg-secondary/40 text-muted-foreground hover:bg-secondary hover:text-foreground border border-border/40"
+									}`}
+								>
+									{page}
+								</button>
+							))}
+						</div>
+
+						<button
+							onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+							disabled={currentPage === totalPages}
+							className="px-4 py-2 rounded-lg bg-secondary/80 border border-border/60 text-sm font-mono text-muted-foreground hover:text-foreground hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+						>
+							Next &rarr;
+						</button>
+					</motion.div>
+				)}
 			</div>
 		</section>
 	);
