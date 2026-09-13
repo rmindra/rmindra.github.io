@@ -43,9 +43,8 @@ export function Hero() {
 								Undergraduate IT PENS | Software Engineer |
 								Network &amp; Security learner.
 							</strong>{" "}
-							Learning web programming is fun and exciting—and the
-							best way to master technology is to build scalable
-							applications while maintaining a strong cyber
+							Building scalable applications, exploring network
+							architecture, and developing a strong cyber
 							security mindset.
 						</p>
 					</div>

@@ -6,14 +6,14 @@ import {
 	Network,
 	Trophy,
 	Cloud,
-	BookOpen,
+	FlaskConical,
 } from "lucide-react";
 
 export function About() {
 	const pillars = [
 		{
 			title: "Informatics Engineering @ PENS (EEPIS)",
-			desc: "Undergraduate student majoring in Informatics Engineering at Politeknik Elektronika Negeri Surabaya (2024-2028), active in Project-Based Learning (@pens-pbl) and Staff Finance at SRE PENS.",
+			desc: "Undergraduate student majoring in Informatics Engineering at Politeknik Elektronika Negeri Surabaya (2024-2028). Currently serving as Head of Finance at SRE PENS and active in Project-Based Learning (@pens-pbl).",
 			icon: Code,
 		},
 		{
@@ -28,8 +28,13 @@ export function About() {
 		},
 		{
 			title: "Cloud Architecture & Medium Author",
-			desc: "Certified in AWS Academy Cloud Foundations & Dicoding Cloud Practitioner Essentials. Active technical writer on Medium (@rmindra) sharing deep dives on networking, coding, and cybersecurity.",
+			desc: "Certified in AWS Academy Cloud Foundations & AWS High Availability Web Architecture. Active technical writer on Medium (@rmindra) sharing deep dives on networking, coding, and cybersecurity.",
 			icon: Cloud,
+		},
+		{
+			title: "Research & Technology · HIMIT PENS",
+			desc: "Junior Staff of Research and Technology at HIMIT PENS (Apr 2026 – Present). Serving as Penanggung Jawab Mini Class X E-Code 2026 — a hands-on workshop bridging creative ideation into digital products for new ITDS PENS students.",
+			icon: FlaskConical,
 		},
 	];
 
@@ -62,8 +67,8 @@ export function About() {
 							I am an{" "}
 							<strong className="text-foreground font-semibold">
 								Undergraduate IT PENS student (rmindra)
-							</strong>{" "}
-							and Staff Finance at SRE PENS. I have a strong
+							</strong>
+							, Head of Finance at SRE PENS, and Junior Staff of Research & Technology at HIMIT PENS. I have a strong
 							passion and practical industry experience across{" "}
 							<strong className="text-foreground font-semibold">
 								Software Engineering, Network Architecture, and
